@@ -47,6 +47,10 @@
             margin: 0 auto;
         }
 
+        #detail {
+            font-size: 10px;
+        }
+
         iframe {
             width: 100%;
             height: 500px;
@@ -76,10 +80,72 @@
 </head>
 
 <body class="bg-stone-100 ">
-    <h1 class="my-2 font-bold text-2xl bg-white">Universe of เกดสุรางค์</h1>
+    <h1 class="my-6 font-bold text-2xl bg-white">Universe of เกดสุรางค์</h1>
+    <h3> จักรวาลเกศสุรางค์ : มีเฟื้องจำกัด ต้องจ้างออเจ้าไหนมารีวิว </h3>
     <div class="row">
-        <img id="myimage" style="margin: auto;" width="500" height="500" src="graph_image.jpg"
-            alt="Universe of เกศสุรางค์">
+        <p style="text-indent:50px;margin-top:10px;" > เป็นหนึ่งในโปรเจคต์การเรียนวิชา Social Network Analysis ฉบับ Non-IT
+            โดยอ้างอิงความสัมพันธ์ของตัวละครจากชื่อดังเรื่อง <i><b>บุพเพสันนิวาส </b></i> และ <i><b> พรหมลิขิต
+            </b></i> เพื่อวิเคราะห์ดูความสัมพันธ์ของแต่ละตัวละครแล้วที่มีความซับซ้อนข้ามภพข้ามชาติ ยังต้องการวิเคราะห์ในเชิงการตลาดเพื่อค้นหา Node ที่มีศักยภาพในการเป็น
+            <b>Influencer</b>ประจำกรุงศรีอยุธยานอกจากคุณหญิงการะเกด หรือ เกศสุรางค์นั่นเอง</p>
+    </div>
+
+    <br>
+    <div class="row" style="display: flex;">
+        <div class="column" style="display: flex; align-items:center; justify-content:center;">
+            <img id="myimage" style="margin: auto;" width="100%" src="graph_image.jpg"
+                alt="Universe of เกศสุรางค์">
+        </div>
+        <div class="column">
+            <div class="row">
+                <div class="column">
+                    <h3>Overview</h3>
+                    <p style="text-indent: 50px;">จุดประสงค์ของโปรเจคต์นี้คือการหาความรูปแบบความสัมพันธ์ของกลุ่มสังคมที่รายล้อมตัวเกศสุรางค์เพื่อหา
+                        Influencer ด้วยโปรแกรม Gephi
+                        โดยใช้เทคนิคต่าง ๆ อาทิ</p>
+                    <table id="detail" class="bg-white table-auto border-collapse">
+                        <tr>
+                            <td>Centrality</td>
+                            <td>degree เสมือนเป็นหน่วยเรียกจำนวน edge ที่ node มี Node ไหนที่มี degree
+                                มากที่สุดจะเรียกได้ว่าเป็น node ที่มีความสัมพันธ์กับ node อื่นๆ</td>
+                        </tr>
+                        <tr>
+                            <td>Clossness Centrality </td>
+                            <td>เป็นการค้นหา Node ที่เชื่อมโยงกับ Node อื่นได้รวดเร็ว หรือมีค่า
+                                edge ในระยะที่ 1 ช่วง เทียบได้กับค่าความสนิทชิดเชื้อ</td>
+                        </tr>
+                        <tr>
+                            <td>Betweenness Centrality</td>
+                            <td>Node ที่มีบทบาทสำคัญในการเป็นสะพานเชื่อมต่อกับ node ในเครือข่ายที่สั้นที่สุด</td>
+                        </tr>
+                        <tr>
+                            <td>Hub</td>
+                            <td>ทำตัวเหมือน Host ที่สามารถแพร่กระจายข่าวสารไปยัง Node ที่มีความสำคัญต่อเครือข่ายได้ดี
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Authority</td>
+                            <td>Node ที่มีความสามารถเป็นแหล่งข่าวชั้นเลิศของเครือข่าย</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="column">
+                    <h3>Solution</h3>
+                    <p style="text-indent: 50px;">นอกจากเกศสุรางค์จะเป็นทั้ง Center ทั้ง Between ของเรื่องราวแล้ว ด้วยการใช้โปรแกรม Gephi
+                        และอัลกอริทึ่ม HITS (Hyper Induced Topic Search) เห็นชัดว่า <b>“พุดตาน”</b> และ <b>“พี่จ้อย”</b> ทำหน้าที่เป็น
+                        Authority ที่น่าสนใจ กรณีนี้เราอาจเลือก <b>พี่จ้อย</b> ที่เป็นตัวละครรองลงมา เนื่องจากงบประมาณที่จำกัด
+                        ทั้ง พี่จ้อย ยังเป็นบุคคลที่ใคร ๆ ก็เข้าหา โดยเฉพาะเกศสุรางค์
+                        ที่ทำหน้าที่เป็น HUB ผู้ประกาศกลางของหมู่บ้าน เรียกว่าหากแม่เกศเห็น พี่จ้อย หยิบจับอะไร
+                        มีโอกาสที่จะต้องถูกนำมาบอกต่อสูง</p>
+                    <img id="myimage" src="จ้อย.png" alt="จ้อย" style="width: 150px; margin-top:10px;">
+                </div>
+
+                <div class="row">
+                    
+                </div>
+            </div>
+
+        </div>
     </div>
     <br>
     <h2 class="font-bold text-xl bg-white">สายสัมพันธ์ ณ ภพไหน ๆ </h2>
@@ -373,21 +439,13 @@
     <div id="content" class="row">
         <div class="column">
             <iframe
-  src="https://ouestware.gitlab.io/retina/beta/#/embed/?url=https%3A%2F%2Fgist.githubusercontent.com%2FVarapornDPU%2F845fde82099e2feefd9ed36cd2557706%2Fraw%2Fbd3377918f2ec5a0f1d4a76c0d387e31ffec3c96%2Fnetwork-5110d94b-dd0.gexf&r=v"
-  frameBorder="0"
-  title="Retina"
-  allowFullScreen
-></iframe>
+                src="https://ouestware.gitlab.io/retina/beta/#/embed/?url=https%3A%2F%2Fgist.githubusercontent.com%2FVarapornDPU%2F845fde82099e2feefd9ed36cd2557706%2Fraw%2Fbd3377918f2ec5a0f1d4a76c0d387e31ffec3c96%2Fnetwork-5110d94b-dd0.gexf&r=v"
+                frameBorder="0" title="Retina" allowFullScreen></iframe>
         </div>
         <div class="column">
             <iframe
-
-
-  src="https://ouestware.gitlab.io/retina/beta/#/embed/?url=https%3A%2F%2Fgist.githubusercontent.com%2FVarapornDPU%2Ff7bf3fce796ad16a3579450bcd07c16c%2Fraw%2F1ba5a046ee9774b7de461653c80990d3f99cdfe6%2Fnetwork-820db759-1cb.gexf&r=v"
-  frameBorder="0"
-  title="Retina"
-  allowFullScreen
-></iframe>
+                src="https://ouestware.gitlab.io/retina/beta/#/embed/?url=https%3A%2F%2Fgist.githubusercontent.com%2FVarapornDPU%2Ff7bf3fce796ad16a3579450bcd07c16c%2Fraw%2F1ba5a046ee9774b7de461653c80990d3f99cdfe6%2Fnetwork-820db759-1cb.gexf&r=v"
+                frameBorder="0" title="Retina" allowFullScreen></iframe>
         </div>
     </div>
     <br>
@@ -426,30 +484,6 @@
         </div>
     </div>
     <br>
-    <div id="footer" class="bg-stone-200 pt-3 pb-3">
-        <table class="bg-white rounded-lg">
-            <tr>
-                <th colspan="2">รายงานโดย</th>
-            </tr>
-            <tr>
-                <th>ชื่อ</th>
-                <th>รหัส</th>
-            </tr>
-            <tr>
-                <td>วราภรณ์ ฉลวยศรี </td>
-                <td>65130655</td>
-            </tr>
-            <tr>
-                <td>นัทธมน ปานเทศ</td>
-                <td>65130972 </td>
-            </tr>
-            <tr>
-                <td>ปฏิภาณ สาระนิคย์</td>
-                <td>65130730 </td>
-            </tr>
-        </table>
-    </div>
-
 </body>
 
 </html>
