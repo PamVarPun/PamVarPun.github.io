@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Social Analysis</title>
+</head>
+
+<body class="bg-stone-100">
+    <br>
+    <h2 class="font-bold text-xl bg-white">การวิเคราะห์ความสัมพันธ์</h2>
+    <br>
+    <div id="content" class="row">
+        <div class="column">
+            <h3 class="font-bold"> Closeness Centrality</h3>
+            <p class="my-2 indent-3">ค่าความสนิทชิดเชื้อ "Closeness" เป็นอัลกอริทึ่มที่ให้ความสำคัญกับการเชื่อมต่อ Node
+                ในเครือข่ายได้อย่างรววดเร็วที่สุด โดยกราฟได้ใช้สีในการไล่ออ่อนจากเข้ม โดย Node
+                ไหนที่มีสีอ่อนแสดงว่ามีค่าความ Closeness ที่ต่ำไล่ลำดับค่าสีขึ้นไปเรื่อย ๆ ทั้งนี้ค่า Close
+                จะไม่เกี่ยวว่าต้องเป็น Node ที่มี degree สูง หากเป็น Node ที่มี degree ต่ำ แต่สามารถเชื่อมโยงกับ Node
+                ที่สำคัญได้ก็จะได้ค่า Closeness ที่สูงนั่นเอง</p>
+        </div>
+        <div class="column">
+            <h3 class="font-bold">Betweeness Centrality</h3>
+            <p class="my-2 indent-3">"สะพานของความสัมพันธ์ที่สั้นที่สุด" ใช้หลักการคำณวนหา Node
+                ที่มีระยะทางเชื่อมโยงไปยังอีกคนหลาย ๆ คนที่สั้นที่สุด เรียกว่าใครที่มีค่า Betweeness มากที่สุด
+                คือคนกลางที่จะเชื่อมโยงกลุ่มความสัมพันธ์ได้สั้นมากที่สุด
+                โดยกราฟนี้ใช้การแสดงไล่สีจากอ่อนไปเข้ม แสดงว่าใครที่ไม่ได้เชื่อมโยงถึงคนอื่นเท่าไหร่นัก จะมีสีที่จืดจาง
+                ส่วนใครที่มีการเชื่อมต่อที่สำคัญระหนึ่งหากตัดคนนั้นแล้ว อาจไม่มีการเชื่อมต่อกันของกลุ่มความสัมพันนี้
+                จะมีสีเข้มมากที่สุด ในรายงานนี้หมายถึง เกศสุรางค์ นั่นเอง</p>
+        </div>
+    </div>
+    <div id="content" class="row">
+        <div class="column">
+            <iframe src="https://ouestware.gitlab.io/retina/beta/#/embed/?url=https%3A%2F%2Fgist.githubusercontent.com%2FVarapornDPU%2F845fde82099e2feefd9ed36cd2557706%2Fraw%2Fbd3377918f2ec5a0f1d4a76c0d387e31ffec3c96%2Fnetwork-5110d94b-dd0.gexf&r=v" frameBorder="0"
+                title="Retina" allowFullScreen></iframe>
+        </div>
+        <div class="column">
+            <iframe
+                src="https://ouestware.gitlab.io/retina/beta/#/embed/?url=https%3A%2F%2Fgist.githubusercontent.com%2FVarapornDPU%2Ff7bf3fce796ad16a3579450bcd07c16c%2Fraw%2F1ba5a046ee9774b7de461653c80990d3f99cdfe6%2Fnetwork-820db759-1cb.gexf&r=v"
+                frameBorder="0" title="Retina" allowFullScreen></iframe>
+        </div>
+    </div>
+    <br>
+    <div class="bg-white my-2" style="height: 100;">
+        <h1 class="font-bold text-xl">HITS: Hyperlink-Induced Topic Search</h1>
+        <h2 class="text-xl">Hub and Authority</h2>
+    </div>
+    <br>
+    <div id="content" class="row">
+        <div class="column">
+            <h3 class="font-bold">Authority</h3>
+            <p class="indent-3">แหล่งข้อมูลชั้นเลิศที่ใครก็อยากเข้าหา : Authority
+                เป็นการวัดจำนวนการเชื่อมโยงเข้าหาโหนดนั้นๆ
+                จากโหนดสำคัญในเครือข่าย โดยไม่จำเป้นต้องเป็น Node ที่มีจำนวน Degree มาก และต่างจากค่า Closeness
+                ที่เน้นความรวดเร็วในการเชื่อมโยงกับ Node อื่นในเครือข่าย
+            </p>
+        </div>
+        <div class="column">
+            <h3 class="font-bold">Hub</h3>
+            <p class="indent-3">เจ้าบ้านผู้น่ารัก : Hub วัดความสำคัญของ Node คล้ายกับ Authority แต่เป็นในรูปแบบตรงข้าม
+                นั่นก็คือ
+                ให้ความสำคัญกับ Node ในการเชื่อมโยงออกไปหา Node สำคัญอื่นๆ ซึ่งไม่ผันตรงกับจำนวน degree out
+                และไม่เหมือน Betweeness ที่เน้นเส้นทางที่สั้นที่สุดระหว่างคู่โหนดในเครือข่าย </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <iframe
+                src="https://ouestware.gitlab.io/retina/beta/#/embed/?url=https%3A%2F%2Fgist.githubusercontent.com%2FVarapornDPU%2F18026b57afe042afd61ab95b2befdea4%2Fraw%2F78fa503b0226a840625946cc7a5f0b9226a7de33%2Fnetwork-34cb8da9-0f0.gexf&r=v"
+                frameBorder="0" title="Retina" allowFullScreen></iframe>
+        </div>
+        <div class="column">
+            <iframe
+                src="https://ouestware.gitlab.io/retina/beta/#/embed/?url=https%3A%2F%2Fgist.githubusercontent.com%2FVarapornDPU%2F3590c04c748284badea086f02a5d9b14%2Fraw%2F8f0e50bc97417fe1dcd32329f2732309dcabd953%2Fnetwork-08195574-c62.gexf&r=v"
+                frameBorder="0" title="Retina" allowFullScreen></iframe>
+        </div>
+    </div>
+    <br>
+    <div class="button">
+        <a href="index.html" class="btn">หน้าหลัก</a>
+        <a href="relationship.html" class="btn">สายสัมพันธ์ ณ ภพไหน ๆ</a>
+    </div>
+    <footer>
+        Copyright 2024 &copy; by Varaporn Chaluaysri. All Right Reserved.
+    </footer>
+</body>
+
+</html>
